@@ -1,13 +1,635 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE HTML>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal website of Jonathan Mace">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Jonathan Mace">
+    <link rel="icon" type="image/png" href="mpi-sws-cld-logo-favicon.png" />
+
     <title>Jonathan Mace</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.1.3-dist/css/bootstrap-simplex.min.css" rel="stylesheet">
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet" href="fontawesome-free-5.3.1-web/css/all.css">
+    <link rel="stylesheet" href="academicons-1.8.6/css/academicons.min.css"/>
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Hello World</h1>
-    <p>Welcome to Jonathan Mace's personal website.</p>
+
+<body class="me">
+<wrapper class="d-flex flex-column">
+
+<div class="container top-info">
+<div class="row">
+<div class="col my-auto">
+<div class="header-name">
+<h1>Jonathan Mace</h1>
+</div>
+</div>
+<div class="col-md-auto my-auto personal-details">
+<div style="font-weight: 700">Researcher</div>
+<div>Microsoft Research</div>
+<div style="padding-top: 0.5rem; font-size: 0.9rem">
+<i class="far fa-envelope fa-md" style="padding-right: 5px"></i>jonathanmace at microsoft dot com
+</div>
+<div style="padding-top: 0.5rem; font-size: 0.9rem">
+<a href="mace_cv.pdf"><i class="far fa-file-pdf fa-md" style="padding-right: 5px"></i>CV</a> • 
+<a href="https://scholar.google.com/citations?user=-j5wb9IAAAAJ"><i class="ai ai-google-scholar ai-lg"></i>Scholar</a> • 
+<a href="https://dblp.uni-trier.de/pers/hd/m/Mace:Jonathan"><i class="ai ai-dblp ai-lg"></i>DBLP</a> • 
+<a href="https://github.com/JonathanMace"><i class="fab fa-github fa-md" style="padding-right: 5px"></i>GitHub</a>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #fff; text-align: center">
+<ul class="nav nav-pills navbar-nav mx-auto" id="navtabs" role="tablist">
+<li class="nav-item">
+<a class="nav-link" id="aboutme-tab" data-toggle="pill" href="#aboutme" role="tab" aria-controls="aboutme" aria-selected="true">About Me</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="publications-tab" data-toggle="pill" href="#publications" role="tab" aria-controls="publications" aria-selected="false">Publications</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="mace_cv.pdf">CV</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="contactme-tab" data-toggle="pill" href="#contactme" role="tab" aria-controls="contactme" aria-selected="false">Contact</a>
+</li>
+</ul>
+</nav>
+</div>
+
+<main role="main" class="container-fluid flex-fill">
+
+<div class="tab-content">
+
+<div class="tab-pane" id="aboutme" role="tabpanel" aria-labelledby="aboutme-tab">
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-xl-10">
+
+<div class="container aboutme">
+<div class="row">
+<div class="col-sm-auto order-2">
+<img class="img-fluid macephoto" src="me2018-sm.jpg">
+</div>
+<div class="col-xl order-1">
+<p>I am a researcher in the Cloud Reliability group at <a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a> in Redmond, WA.</p>
+
+<p>Previously, I was tenure-track faculty at the <a href="https://www.mpi-sws.org/">Max Planck Institute for Software Systems</a> (2018-2022), where I led the Cloud Software Systems group and held a dual appointment at <a href="https://www.uni-saarland.de/">Saarland University</a>.</p>
+
+<p>I received my PhD from <a href="https://www.brown.edu/">Brown University</a> (2011-2018) under the supervision of <a href="http://cs.brown.edu/~rfonseca/">Rodrigo Fonseca</a>, supported in part by a Facebook PhD Fellowship.</p>
+</div>
+</div>
+</div>
+
+<div class="container research">
+<h2>Research</h2>
+<hr/>
+
+<div class="row">
+<div class="col">
+<p>My research focuses on designing and building reliable, observable, self-managing cloud systems.  A central goal for me is to make it easier to operate large, complicated software systems, and to understand their behavior at runtime.  Currently I am working at the intersection of observability, semantic modeling, and agentic AI.</p>
+
+</div>
+</div>
+</div>
+
+<div class="container projects">
+<h2>Select Projects</h2>
+<hr/>
+<div class="row">
+<div class="col">
+
+<p><b><i>Telemeta</i></b> extracts and indexes semantic models from large-scale observability data, enabling accurate and reliable AI agents for cloud operations. This is an ongoing project I lead at Microsoft Research, so get in touch if you're interested in internships or collaborations!</p>
+
+<p><b><i>Blueprint</i></b> is an extensible compiler and benchmark suite for microservice applications. It simplifies prototyping by making it easy to reconfigure infrastructure choices without rewriting application code. Check out the project on <a href="https://github.com/Blueprint-uServices/blueprint">GitHub</a>.</p>
+
+<p><b><i>Hindsight</i></b> is a distributed tracing framework for <i>edge-case tracing</i>, i.e. capturing detailed traces for rare and outlier requests without the data loss of sampling-based systems. It combines per-node telemetry history, programmatic symptom detection, and rapid distributed retrieval. Hindsight appeared at <a href="papers/zhang2023hindsight.pdf">NSDI 2023</a>; code is on <a href="https://gitlab.mpi-sws.org/cld/tracing/hindsight">GitLab</a>.</p>
+
+<p><b><i>Clockwork</i></b> is a DNN serving system designed for predictable performance. By eliminating sources of variability and centralizing scheduling and admission control, Clockwork achieves extremely tight tail latency. It received the Distinguished Artifact Award at <a href="papers/gujarati2020serving.pdf">OSDI 2020</a>; code is on <a href="https://gitlab.mpi-sws.org/cld/ml/clockwork">GitLab</a>.</p>
+
+<p><b><i>Pivot Tracing</i></b> is a cross-component monitoring framework for distributed systems. Troubleshooting cross-component problems often requires information that is inaccessible due to a lack of end-to-end visibility. Pivot Tracing addresses this by combining causal metadata propagation with dynamic instrumentation, enabling operators to define, measure, and aggregate metrics across component boundaries using a simple SQL-like interface. It received the Best Paper Award at <a href="papers/mace2015pivot.pdf">SOSP 2015</a>; code is on <a href="http://brownsys.github.io/tracing-framework/">GitHub</a>.</p>
+</div>
+</div>
+</div>
+
+<div class="container researchoverview">
+<h2>Software</h2>
+<hr/>
+
+<div class="row">
+<div class="col">
+<p>Research projects and code are scattered across a few locations:</p>
+<ul>
+<li><a href="https://github.com/JonathanMace">github.com/JonathanMace</a> (personal projects)</li>
+<li><a href="https://gitlab.mpi-sws.org/cld">gitlab.mpi-sws.org/cld</a> (MPI-SWS projects)</li>
+<li><a href="https://github.com/brownsys">github.com/brownsys</a> (Brown University projects)</li>
+<li><a href="https://github.com/tracingplane">github.com/tracingplane</a> (Brown University projects)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- News Section (commented out)
+<div class="container news">
+<h2>Recent News</h2>
+<hr/>
+
+<div class="row">
+<div class="col-xl order-1">
+<ul class="newsentries">
+<li><b>2026/01/31</b> New Website Created</li>
+</ul>
+</div>
+</div>
+</div>
+-->
+
+<!-- Awards Section (commented out)
+<div class="container awards">
+<h2>Awards</h2>
+<hr/>
+
+<div class="row">
+<div class="col">
+<ul class="awardslist">
+<li><b>2020/11</b> Distinguished Artifact Award at OSDI 2020, for <a href="papers/gujarati2020serving.pdf">Serving DNNs like Clockwork: Performance Predictability from the Bottom Up</a>.</li>
+<li><b>2020/02</b> Finalist for the Facebook ML Systems research award, for our work on DNN serving. <a href="https://research.fb.com/blog/2020/02/announcing-the-winners-of-the-systems-for-machine-learning-rfp/"><i style="font-size: 10px; vertical-align: top" class="fas fa-external-link-alt"></i></a></li>
+<li><b>2018/10</b> Honorable Mention for the 2018 Dennis M. Ritchie Doctoral Dissertation Award, for my thesis <a href="papers/mace_phd_thesis.pdf">A Universal Architecture for Cross-Cutting Tools in Distributed Systems</a>.</li>
+<li><b>2016/09</b> <a href="https://research.fb.com/fellows/mace-jonathan/">Facebook PhD Fellowship</a> in Distributed Systems (2016-2018).</li>
+<li><b>2015/10</b> Best Paper Award at SOSP 2015, for <a href="papers/mace2015pivot.pdf">Pivot Tracing: Dynamic Causal Monitoring for Distributed Systems</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+-->
+</div>
+</div>
+</div>
+</div>
+
+<div class="tab-pane" id="publications" role="tabpanel" aria-labelledby="publications-tab">
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-xl-10">
+
+<div class="container publications">
+
+<div class="row">
+<div class="col newyear">2025</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">AIOpsLab: A Holistic Framework for Evaluating AI Agents for Enabling Autonomous Cloud</div>
+<div class="authors">Yinfang Chen, Manish Shetty, Gagan Somashekar, Minghua Ma, Yogesh Simmhan, Jonathan Mace, Chetan Bansal, Rujia Wang, Saravan Rajmohan</div>
+<div><span class="venue">MLSys</span>, <span class="year">2025</span>.</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Fair, Practical, and Efficient Carbon Accounting for LLM Serving</div>
+<div class="authors">Yueying Lisa Li, Leo Han, G Edward Suh, Christina Delimitrou, Fiodar Kazhamiaka, Esha Choukse, Rodrigo Fonseca, Liangcheng Yu, Jonathan Mace, Udit Gupta</div>
+<div><span class="venue">ACM SIGMETRICS Performance Evaluation Review</span>, <span class="year">2025</span>.</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Generating Representative Macrobenchmark Microservice Systems from Distributed Traces with Palette</div>
+<div class="authors">Vaastav Anand, Matheus Stolet, Jonathan Mace, Antoine Kaufmann</div>
+<div><span class="venue">APSys</span>, <span class="year">2025</span>.</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Intent-based System Design and Operation</div>
+<div class="authors">Vaastav Anand, Yichen Li, Alok Gautam Kumbhare, Celine Irvene, Chetan Bansal, Gagan Somashekar, Jonathan Mace, Pedro Las-Casas, Ricardo Bianchini, Rodrigo Fonseca</div>
+<div><span class="venue">PACMI (co-located with SOSP)</span>, <span class="year">2025</span>.</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Automated Service Design with Cerulean</div>
+<div class="authors">Vaastav Anand, Akshay Kumbhare, Christopher Irvene, Chetan Bansal, Gagan Somashekar, Jonathan Mace, Pedro Las-Casas, Rodrigo Fonseca</div>
+<div><span class="venue">AIOps Workshop</span>, <span class="year">2025</span>.</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Argos: Agentic Time-Series Anomaly Detection with Autonomous Rule Generation via Large Language Models</div>
+<div class="authors">Yile Gu, Yuxuan Xiong, Jonathan Mace, Yong Jiang, Yulong Hu, Baris Kasikci, Peng Cheng</div>
+<div><span class="venue">arXiv preprint</span>, <span class="year">2025</span>. <span class="links">[<a href="https://arxiv.org/pdf/2501.14170.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2024</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Building AI Agents for Autonomous Clouds: Challenges and Design Principles</div>
+<div class="authors">Manish Shetty, Yinfang Chen, Gagan Somashekar, Minghua Ma, Yogesh Simmhan, Xuchao Zhang, Jonathan Mace, Pedro Las-Casas, Shachee Gupta, Suman Nath, Chetan Bansal, Saravan Rajmohan</div>
+<div><span class="venue">SoCC</span>, <span class="year">2024</span>.</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">If At First You Don't Succeed, Try, Try, Again...? Insights and LLM-informed Tooling for Detecting Retry Bugs in Software Systems</div>
+<div class="authors">Bogdan Stoica, Utsav Sethi, Yiming Su, Cyrus Zhou, Shan Lu, Jonathan Mace, Madan Musuvathi, Suman Nath</div>
+<div><span class="venue">SOSP</span>, <span class="year">2024</span>.</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Cloud Atlas: Efficient Fault Localization for Cloud Systems using Language Models and Causal Insight</div>
+<div class="authors">Zhiqiang Xie, Yujia Zheng, Lizi Ottens, Kun Zhang, Christos Kozyrakis, Jonathan Mace</div>
+<div><span class="venue">arXiv preprint</span>, <span class="year">2024</span>. <span class="links">[<a href="https://arxiv.org/pdf/2407.08694.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2023</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Blueprint: A Toolchain for Highly-Reconfigurable Microservice Applications</div>
+<div class="authors">Vaastav Anand, Deepak Garg, Antoine Kaufmann, Jonathan Mace</div>
+<div><span class="venue">SOSP</span>, <span class="year">2023</span>.</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Antipode: Enforcing Cross-Service Causal Consistency in Distributed Applications</div>
+<div class="authors">João Loff, Daniel Porto, João Garcia, Jonathan Mace, Rodrigo Rodrigues</div>
+<div><span class="venue">SOSP</span>, <span class="year">2023</span>.</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Detection Is Better Than Cure: A Cloud Incidents Perspective</div>
+<div class="authors">Varsha Ganatra, Aditya Parayil, Saurabh Ghosh, Yingnong Kang, Minghua Ma, Chetan Bansal, Suman Nath, Jonathan Mace</div>
+<div><span class="venue">ESEC/FSE</span>, <span class="year">2023</span>.</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">The Benefit of Hindsight: Tracing Edge-Cases in Distributed Systems</div>
+<div class="authors">Lei Zhang, Zhiqiang Xie, Vaastav Anand, Ymir Vigfusson, Jonathan Mace</div>
+<div><span class="venue">NSDI</span>, <span class="year">2023</span>. <span class="links">[<a href="papers/zhang2023hindsight.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Groundhog: Reconciling Efficiency and Request Isolation in FaaS</div>
+<div class="authors">Mohamed Alzayat, Jonathan Mace, Peter Druschel, Deepak Garg</div>
+<div><span class="venue">EuroSys</span>, <span class="year">2023</span>. <span class="links">[<a href="https://arxiv.org/pdf/2205.11458.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">A Qualitative Interview Study of Distributed Tracing Visualisation: A Characterisation of Challenges and Opportunities</div>
+<div class="authors">Thomas Davidson, Emily Wall, Jonathan Mace</div>
+<div><span class="venue">IEEE Transactions on Visualization and Computer Graphics</span>, <span class="year">February 2023</span>. <span class="links">[<a href="papers/davidson2023qualitative.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">The Odd One Out: Energy is Not Like Other Metrics</div>
+<div class="authors">Vaastav Anand, Zhiqiang Xie, Matheus Stolet, Roberta De Viti, Thomas Davidson, Reyhaneh Karimipour, Safya Alzayat, Jonathan Mace</div>
+<div><span class="venue">ACM SIGENERGY Energy Informatics Review</span>, <span class="year">October 2023</span>.</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2022</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">See it to Believe it? The Role of Visualisation in Systems Research</div>
+<div class="authors">Thomas Davidson, Jonathan Mace</div>
+<div><span class="venue">SoCC</span>, <span class="year">2022</span>. <span class="links">[<a href="papers/davidson2022visualization.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">The Odd One Out: Energy is not like Other Metrics</div>
+<div class="authors">Vaastav Anand, Zhiqiang Xie, Matheus Stolet, Roberta De Viti, Thomas Davidson, Reyhaneh Karimipour, Safya Alzayat, Jonathan Mace</div>
+<div><span class="venue">HotCarbon</span>, <span class="year">2022</span>. <span class="links">[<a href="papers/anand2023energy.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">ACT now: Aggregate Comparison of Traces for Incident Localization</div>
+<div class="authors">Kamala Ramasubramanian, Ashutosh Raina, Jonathan Mace, Peter Alvaro</div>
+<div><span class="venue">arXiv preprint</span>, <span class="year">2022</span>. <span class="links">[<a href="https://arxiv.org/pdf/2205.06933.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2020</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Serving DNNs like Clockwork: Performance Predictability from the Bottom Up</div>
+<div class="authors">Arpan Gujarati, Reza Karimi, Safya Alzayat, Wei Hao, Antoine Kaufmann, Ymir Vigfusson, Jonathan Mace</div>
+<div><span class="venue">OSDI</span>, <span class="year">2020</span>. <span class="links">[<a href="papers/gujarati2020serving.pdf">PDF</a>]</span></div>
+<div class="papernote"><i class="fas fa-trophy"></i> Distinguished Artifact Award</div>
+</div>
+</div>
+
+<div class="row paper paper-with-image">
+<div class="paper-image"><img class="distributed-tracing-in-practice-cover" src="resources/distributed_tracing_in_practice_cover.jpg"/></div>
+<div class="col">
+<div class="title">Distributed Tracing in Practice</div>
+<div class="authors">Austin Parker, Daniel Spoonhower, Jonathan Mace, Rebecca Isaacs</div>
+<div><span class="venue">Book</span>, <span class="year">Published July 2020</span>.</div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2019</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Sifter: Scalable Sampling for Distributed Traces, without Feature Engineering</div>
+<div class="authors">Pedro Las-Casas, Giorgi Papakerashvili, Vaastav Anand, Jonathan Mace</div>
+<div><span class="venue">SoCC</span>, <span class="year">2019</span>. <span class="links">[<a href="papers/lascasas2019sifter.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">No DNN Left Behind: Improving Inference in the Cloud with Multi-Tenancy</div>
+<div class="authors">Amit Samanta, Suhas Shrinivasan, Antoine Kaufmann, Jonathan Mace</div>
+<div><span class="venue">arXiv preprint</span>, <span class="year">2019</span>. <span class="links">[<a href="papers/samanta2019nodnn.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2018</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Weighted Sampling of Execution Traces: Capturing More Needles and Less Hay</div>
+<div class="authors">Pedro Las-Casas, Jonathan Mace, Dorgival Guedes, Rodrigo Fonseca</div>
+<div><span class="venue">SoCC</span>, <span class="year">2018</span>. <span class="links">[<a href="papers/lascasas2018weighted.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">A Universal Architecture for Cross-Cutting Tools in Distributed Systems</div>
+<div class="authors">Jonathan Mace</div>
+<div><span class="venue">Ph.D. Thesis, Brown University</span>, <span class="year">2018</span>. <span class="links">[<a href="papers/mace_phd_thesis.pdf">PDF</a>]</span></div>
+<div class="papernote"><i class="fas fa-trophy"></i> Dennis M. Ritchie Doctoral Dissertation Award, Honorable Mention</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Universal Context Propagation for Distributed System Instrumentation</div>
+<div class="authors">Jonathan Mace, Rodrigo Fonseca</div>
+<div><span class="venue">EuroSys</span>, <span class="year">2018</span>. <span class="links">[<a href="papers/mace2018universal.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2017</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Canopy: An End-to-End Performance Tracing And Analysis System</div>
+<div class="authors">Jonathan Kaldor, Jonathan Mace, Michał Bejda, Edison Gao, Wiktor Kuropatwa, Joe O'Neill, Kian Win Ong, Bill Schaller, Pingjia Shan, Brendan Viscomi, Vinod Venkataraman, Kaushik Veeraraghavan, Yee Jiun Song</div>
+<div><span class="venue">SOSP</span>, <span class="year">2017</span>. <span class="links">[<a href="papers/kaldor2017canopy.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2016</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Principled Workflow-Centric Tracing of Distributed Systems</div>
+<div class="authors">Raja R. Sambasivan, Ilari Shafer, Jonathan Mace, Benjamin H. Sigelman, Rodrigo Fonseca, Gregory R. Ganger</div>
+<div><span class="venue">SoCC</span>, <span class="year">2016</span>. <span class="links">[<a href="papers/sambasivan2016principled.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">2DFQ: Two-Dimensional Fair Queuing for Multi-Tenant Cloud Services</div>
+<div class="authors">Jonathan Mace, Peter Bodik, Madanlal Musuvathi, Rodrigo Fonseca, Krishnan Varadarajan</div>
+<div><span class="venue">SIGCOMM</span>, <span class="year">2016</span>. <span class="links">[<a href="papers/mace20162dfq.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2015</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Pivot Tracing: Dynamic Causal Monitoring for Distributed Systems</div>
+<div class="authors">Jonathan Mace, Ryan Roelke, Rodrigo Fonseca</div>
+<div><span class="venue">SOSP</span>, <span class="year">2015</span>. <span class="links">[<a href="papers/mace2015pivot.pdf">PDF</a>]</span></div>
+<div class="papernote"><i class="fas fa-trophy"></i> Best Paper Award</div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">We are Losing Track: a Case for Causal Metadata in Distributed Systems</div>
+<div class="authors">Rodrigo Fonseca, Jonathan Mace</div>
+<div><span class="venue">HPTS</span>, <span class="year">2015</span>. <span class="links">[<a href="papers/fonseca2015hpts.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Retro: Targeted Resource Management in Multi-Tenant Distributed Systems</div>
+<div class="authors">Jonathan Mace, Peter Bodik, Rodrigo Fonseca, Madanlal Musuvathi</div>
+<div><span class="venue">NSDI</span>, <span class="year">2015</span>. <span class="links">[<a href="papers/mace2015retro.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2014</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Towards General-Purpose Resource Management in Shared Cloud Services</div>
+<div class="authors">Jonathan Mace, Peter Bodik, Rodrigo Fonseca, Madanlal Musuvathi</div>
+<div><span class="venue">HotDep</span>, <span class="year">2014</span>. <span class="links">[<a href="papers/mace2014resource.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider">2013</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Revisiting End-to-End Trace Comparison with Graph Kernels</div>
+<div class="authors">Jonathan Mace, Rodrigo Fonseca</div>
+<div><span class="venue">MSc Project, Brown University</span>, <span class="year">2014</span>. <span class="links">[<a href="papers/mace2013revisiting.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row">
+<div class="col newyear divider"></div>
+</div>
+
+
+
+<div class="row" style="padding-top: 50px">
+<div class="col newyear divider"></div>
+</div>
+
+<h2>Supervised Theses</h2>
+
+<div class="row">
+<div class="col">
+<p>I have been fortunate to work with many talented students over the years.  In particular I advised or co-advised the following theses:</p>
+</div>
+</div>
+
+
+<div class="row paper">
+<div class="col">
+<div class="title">Powering Accurate Aggregate Analysis with Representative Distributed Tracing</div>
+<div class="authors">Reyhaneh Karimipour</div>
+<div><span class="venue">Masters Thesis, Saarland University</span>, <span class="year">2022</span>. <span class="links">[<a href="resources/karimipour2022aggregate.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Using Reinforcement Learning for Low-Latency High-Throughput Request Scheduling</div>
+<div class="authors">Safya Alzayat</div>
+<div><span class="venue">Masters Thesis, Saarland University</span>, <span class="year">2022</span>. <span class="links">[<a href="resources/alzayat2022reinforcement.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Efficient DNN Serving: Evaluating the feasibility of FPGAs for multi-tenant model serving</div>
+<div class="authors"><a href="https://fcaspe.github.io/">Franco Caspe</a></div>
+<div><span class="venue">Erasmus Masters Thesis, Pazmany Peter Catholic University</span>, <span class="year">2021</span>. <span class="links">[<a href="resources/caspe2021thesis.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">Pathfinder: Exploiting Inter-Thread Communication for Request Flow Instrumentation</div>
+<div class="authors">Nicolas Schäfer</a></div>
+<div><span class="venue">Masters Thesis, Saarland University</span>, <span class="year">2020</span>. <span class="links">[<a href="resources/schaefer2021thesis.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">General Baggage Model for End-to-End Tracing and Its Application on Critical Path Analysis</div>
+<div class="authors">Hongkai Sun</div>
+<div><span class="venue">Masters Thesis, Brown University</span>, <span class="year">2016</span>. <span class="links">[<a href="resources/sun2016general.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+<div class="row paper">
+<div class="col">
+<div class="title">End-to-End Tracing Models: Analysis and Unification</div>
+<div class="authors">Jonathan Leavitt</div>
+<div><span class="venue">Undergraduate Thesis, Brown University</span>, <span class="year">2014</span>. <span class="links">[<a href="resources/leavitt2014end.pdf">PDF</a>]</span></div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="tab-pane" id="contactme" role="tabpanel" aria-labelledby="contactme-tab">
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-xl-7">
+
+<div class="container contactme">
+
+<div class="row">
+<div class="col-xl order-1">
+<p><div class="contact-icon"><i class="far fa-envelope"></i></div>jonathanmace@gmail.com</p>
+<p><div class="contact-icon"><i class="fab fa-github"></i></div><a href="https://github.com/JonathanMace">github.com/JonathanMace</a></p>
+<p><div class="contact-icon"><i class="fab fa-github"></i></div><a href="https://github.com/brownsys">github.com/brownsys</a> <span style="color: #666; font-size: 0.9em;">(projects from my time at Brown)</span></p>
+<p><div class="contact-icon"><i class="fab fa-gitlab"></i></div><a href="https://gitlab.mpi-sws.org/cld">gitlab.mpi-sws.org/cld</a> <span style="color: #666; font-size: 0.9em;">(projects from my time at MPI-SWS)</span></p>
+<p><div class="contact-icon"><i class="ai ai-google-scholar"></i></div><a href="https://scholar.google.com/citations?user=-j5wb9IAAAAJ">Google Scholar</a></p>
+<p><div class="contact-icon"><i class="ai ai-dblp"></i></div><a href="https://dblp.uni-trier.de/pers/hd/m/Mace:Jonathan">DBLP</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<footer class="footer container-fluid">
+<div class="container">
+<div class="myfooter">
+<div class="row">
+<div class="col-md" align="center" style="padding-bottom: 10px; color: rgba(0,0,0,0.5);">© Jonathan Mace</div>
+</div>
+</div>
+</div>
+</footer>
+</wrapper>
+
+<!-- Bootstrap core JavaScript -->
+<script src="jquery-3.3.1.slim.min.js"></script>
+<script>window.jQuery || document.write('<script src="bootstrap-4.1.3-dist/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="bootstrap-4.1.3-dist/vendor/popper.min.js"></script>
+<script src="bootstrap-4.1.3-dist/js/bootstrap.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="scripts.js"></script>
 </body>
 </html>
