@@ -26,15 +26,15 @@
 <div class="row">
 <div class="col my-auto">
 <div class="header-name">
-<h1>Jonathan Mace</h1>
+<h1 style="padding-bottom: 0 !important;">Jonathan Mace</h1>
 </div>
 </div>
 <div class="col-md-auto my-auto personal-details">
 <div style="font-weight: 700">Researcher</div>
 <div>Microsoft Research</div>
-<div style="padding-top: 0.5rem; font-size: 0.9rem">
+<!-- <div style="padding-top: 0.5rem; font-size: 0.9rem">
 <i class="far fa-envelope fa-md" style="padding-right: 5px"></i>jonathan.c.mace at gmail
-</div>
+</div> -->
 <div style="padding-top: 0.5rem; font-size: 0.9rem">
 <!-- <a href="mace_cv.pdf"><i class="far fa-file-pdf fa-md" style="padding-right: 5px"></i>CV</a> •  -->
 <a href="https://scholar.google.com/citations?user=-j5wb9IAAAAJ"><i class="ai ai-google-scholar ai-lg"></i>Scholar</a> • 
@@ -51,6 +51,9 @@
 <ul class="nav nav-pills navbar-nav mx-auto" id="navtabs" role="tablist">
 <li class="nav-item">
 <a class="nav-link" id="aboutme-tab" data-toggle="pill" href="#aboutme" role="tab" aria-controls="aboutme" aria-selected="true">About Me</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" id="research-tab" data-toggle="pill" href="#research" role="tab" aria-controls="research" aria-selected="false">Research</a>
 </li>
 <li class="nav-item">
 <a class="nav-link" id="publications-tab" data-toggle="pill" href="#publications" role="tab" aria-controls="publications" aria-selected="false">Publications</a>
@@ -78,14 +81,14 @@
 <div class="container aboutme">
 <div class="row">
 <div class="col-sm-auto order-2">
-<img class="img-fluid macephoto" src="me2018-sm.jpg">
+<img class="img-fluid macephoto" src="photos/me2018-sm.jpg" alt="Photo of Jonathan Mace"/>
 </div>
 <div class="col-xl order-1">
-<p>I am a researcher in the Cloud Reliability group at <a href="https://www.microsoft.com/en-us/research/">Microsoft Research</a> in Redmond, WA.</p>
+<p>I am a researcher in the Cloud Reliability group at <a href="https://www.microsoft.com/en-us/research/people/jonathanmace/">Microsoft Research</a> in Redmond, WA.</p>
 
 <p>Previously, I was tenure-track faculty at the <a href="https://www.mpi-sws.org/">Max Planck Institute for Software Systems</a> (2018-2022), where I led the Cloud Software Systems group and held a dual appointment at <a href="https://www.uni-saarland.de/">Saarland University</a>.</p>
 
-<p>I received my PhD from <a href="https://www.brown.edu/">Brown University</a> (2011-2018) under the supervision of <a href="http://cs.brown.edu/~rfonseca/">Rodrigo Fonseca</a>, supported in part by a Facebook PhD Fellowship.</p>
+<p>I received my PhD from <a href="https://cs.brown.edu/people/jcmace">Brown University</a> (2011-2018) under the supervision of <a href="http://cs.brown.edu/~rfonseca/">Rodrigo Fonseca</a>, supported in part by a Facebook PhD Fellowship.</p>
 </div>
 </div>
 </div>
@@ -108,15 +111,15 @@
 <div class="row">
 <div class="col">
 
-<p><b><i>Telemeta</i></b> extracts and indexes semantic models from large-scale observability data, enabling accurate and reliable AI agents for cloud operations. This is an ongoing project I lead at Microsoft Research, so get in touch if you're interested in internships or collaborations!</p>
+<div class="current-project" style="border-left: 3px solid #3498db; padding: 15px; margin-bottom: 1rem; background:  rgba(52, 152, 219, 0.08);">
+<p style="margin-bottom: 0;"><b><i>Telemeta.</i></b> Large-scale telemetry lacks semantic context: metric names are opaque; table relationships are implicit; tables are overloaded; and data is unnormalized. Making effective use of telemetry requires extensive discovery: understanding where data lives, what form it takes, and what rules apply to extract it. Telemeta extracts and indexes semantic models from metric data — what metrics measure, what columns represent, how tables relate, and hidden assumptions about data formats — to give agents a structured foundation for interpreting telemetry.<br/><span style="padding-top: 7px; display: inline-block;">ℹ️<i> This is an ongoing project I lead at Microsoft.</i></span></p>
+</div>
 
-<p><b><i>Blueprint</i></b> is an extensible compiler and benchmark suite for microservice applications. It simplifies prototyping by making it easy to reconfigure infrastructure choices without rewriting application code. Check out the project on <a href="https://github.com/Blueprint-uServices/blueprint">GitHub</a>.</p>
+<p><b><i>Hindsight</i></b> is a distributed tracing framework for <i>retroactive sampling</i>, i.e. capturing detailed traces for rare and outlier requests without the data loss of tail sampling-based systems. Hindsight revisits the design assumptions behind tail sampling: we found that the overhead of trace collection is not inherent to tracing itself, but comes primarily from transmitting, indexing, and storing traces. Local capture is cheap. Hindsight exploits this by recording all traces into lightweight local ring buffers and persisting them only when a downstream trigger fires (e.g., an error or SLO violation). The key insight is that you can defer the sampling decision until after you know what matters, as long as local storage is cheap and triggers are fast. We built Hindsight from the ground up; its code is open-sourced (<a href="papers/zhang2023hindsight.pdf">NSDI 2023</a>; <a href="https://gitlab.mpi-sws.org/cld/tracing/hindsight">GitLab</a>).</p>
 
-<p><b><i>Hindsight</i></b> is a distributed tracing framework for <i>edge-case tracing</i>, i.e. capturing detailed traces for rare and outlier requests without the data loss of sampling-based systems. It combines per-node telemetry history, programmatic symptom detection, and rapid distributed retrieval. Hindsight appeared at <a href="papers/zhang2023hindsight.pdf">NSDI 2023</a>; code is on <a href="https://gitlab.mpi-sws.org/cld/tracing/hindsight">GitLab</a>.</p>
+<p><b><i>Blueprint</i></b> is an extensible compiler and benchmark suite for microservice applications. Experimenting with end-to-end ideas in microservices requires changing scaffolding across many services - a tedious, time-consuming task. Blueprint separates workflow logic from infrastructure choices, letting researchers swap RPC frameworks, enable tracing, or add replication with a few lines of config rather than hundreds of lines of code (<a href="papers/anand2023blueprint.pdf">SOSP 2023</a>; <a href="https://github.com/Blueprint-uServices/blueprint">GitHub</a>).</p>
 
-<p><b><i>Clockwork</i></b> is a DNN serving system designed for predictable performance. By eliminating sources of variability and centralizing scheduling and admission control, Clockwork achieves extremely tight tail latency. It received the Distinguished Artifact Award at <a href="papers/gujarati2020serving.pdf">OSDI 2020</a>; code is on <a href="https://gitlab.mpi-sws.org/cld/ml/clockwork">GitLab</a>.</p>
-
-<p><b><i>Pivot Tracing</i></b> is a cross-component monitoring framework for distributed systems. Troubleshooting cross-component problems often requires information that is inaccessible due to a lack of end-to-end visibility. Pivot Tracing addresses this by combining causal metadata propagation with dynamic instrumentation, enabling operators to define, measure, and aggregate metrics across component boundaries using a simple SQL-like interface. It received the Best Paper Award at <a href="papers/mace2015pivot.pdf">SOSP 2015</a>; code is on <a href="http://brownsys.github.io/tracing-framework/">GitHub</a>.</p>
+<p><b><i>Pivot Tracing</i></b> is a cross-component monitoring framework for distributed systems. Filtering or aggregating metrics across component boundaries requires associating events in one location with shared keys from another.  To address this, Pivot Tracing propagates tuples/tags to enable such queries without per-query instrumentation.  Pivot Tracing does this with a novel <i>baggage</i> abstraction for general-purpose context propagation. Baggage acts as a narrow waist for cross-cutting tools: many tools share <i>how</i> they propagate context but differ in <i>what</i> they carry and how they interpret it. Pivot Tracing received the Best Paper Award at <a href="papers/mace2015pivot.pdf">SOSP 2015</a>; code is on <a href="http://brownsys.github.io/tracing-framework/">GitHub</a>.  Today, baggage is part of <a href="https://opentelemetry.io/docs/concepts/signals/baggage/"><i class="fas fa-external-link-alt fa-xs"></i> OpenTelemetry's trace context</a>.</p>
 </div>
 </div>
 </div>
@@ -176,6 +179,146 @@
 </div>
 </div>
 
+<div class="tab-pane" id="research" role="tabpanel" aria-labelledby="research-tab">
+
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-xl-10">
+
+<div class="container research-detail">
+
+<div class="row">
+<div class="col">
+<p>My work is first and foremost motivated by the scale and complexity of large, modern cloud and internet applications, and the difficulty of achieving end-to-end reliability.</p>
+
+<p>The perspective I've always been drawn to is that of <b>end-to-end behavior</b>: requests in distributed systems traverse machines, processes, queues, and backends, and a failure at any point can cascade into end-to-end impact. How do we observe, and ultimately improve, end-to-end behavior in such systems? Much of my work has orbited distributed tracing, touching topics both direct (e.g., tracing mechanisms) and indirect (e.g., downstream tasks like root-cause analysis).</p>
+
+<p>Beyond tracing, my research more broadly asks how to achieve end-to-end reliability, robustness, and performance by design. Over the years I've built systems exploring abstractions and design principles for, e.g., multi-tenant isolation, predictable performance, and causal consistency. And of course, as often happens in systems research, resource management and scheduling keep resurfacing again and again!</p>
+</div>
+</div>
+
+<h2>Distributed Tracing</h2>
+<hr/>
+
+<div class="row">
+<div class="col">
+<p>A few highlights from my work on distributed tracing:</p>
+
+<ul>
+<li><b>Standards.</b> From around 2015 I worked with the Distributed Tracing Working Group to help initiate the OpenTracing standard; I later served on its Industrial Advisory Board. OpenTracing has since become the tracing arm of OpenTelemetry. That experience fed into <i>Distributed Tracing in Practice</i> (<a href="https://www.oreilly.com/library/view/distributed-tracing-in/9781492056621/"><i class="fas fa-external-link-alt fa-xs"></i> O'Reilly, 2020</a>), co-authored with colleagues from Lightstep.</li>
+
+<li><b>Baggage.</b> In Pivot Tracing I proposed <i>baggage</i>, a general-purpose context propagation mechanism (<a href="papers/mace2015pivot.pdf">SOSP 2015</a>, Best Paper Award). Baggage acts as a narrow waist for cross-cutting tools: many tools share <i>how</i> they propagate context but differ in <i>what</i> they carry and how they interpret it. After Pivot Tracing I refined the design and explored additional use cases in a follow-up paper (<a href="papers/mace2018universal.pdf">EuroSys 2018</a>) and in my PhD thesis, which received the Honorable Mention for the 2018 Dennis Ritchie Thesis award. Several subsequent projects have built on this substrate (see below). Today, baggage is part of <a href="https://opentelemetry.io/docs/concepts/signals/baggage/"><i class="fas fa-external-link-alt fa-xs"></i> OpenTelemetry's trace context</a>.</li>
+
+<li><b>Tracing at Facebook.</b> During my PhD I spent time working at Facebook on Canopy, their end-to-end performance tracing and analysis system (<a href="papers/kaldor2017canopy.pdf">SOSP 2017</a>). Canopy juxtaposes with other distributed tracing work in interesting ways: Canopy collected on the order of a billion traces per day, and at that scale, semantic heterogeneity became a first-order design concern: engineers instrument in different ways, and the pipeline still has to unify those choices end-to-end, including trace-derived aggregates.</li>
+
+<li><b>Consuming Traces.</b> Most tracing research (including my own) focuses on capture mechanisms; what happens after traces land is often an afterthought. To better understand practitioners' actual workflows, we interviewed engineers about challenges and use-cases (<a href="papers/davidson2023qualitative.pdf">IEEE TVCG 2023</a>). This followed from work where we found that systems researchers frequently omit or elide user-facing concerns when designing systems (<a href="papers/davidson2022visualization.pdf">SoCC 2022</a>).</li>
+</ul>
+</div>
+</div>
+
+<h2>Cross-Cutting Tools</h2>
+<hr/>
+
+<div class="row">
+<div class="col">
+<p>A recurring theme in my work is <b>cross-cutting tools</b>: tools that need to span components and layers because the property they measure or enforce is end-to-end. Tracing is one instance, but the same pattern shows up elsewhere, such as:</p>
+
+<ul>
+<li><b>Resource Management.</b> Multi-tenant isolation requires coordinating resource policies across distributed components, but scheduling decisions are local. Retro propagated tenant IDs in-band so that each component could enforce per-tenant limits consistently (<a href="papers/mace2015retro.pdf">NSDI 2015</a>).</li>
+
+<li><b>Cross-Component Metrics.</b> Filtering or aggregating metrics across component boundaries requires associating events with shared keys. Pivot Tracing propagated tuples/tags to enable such queries without per-query instrumentation (<a href="papers/mace2015pivot.pdf">SOSP 2015</a>).</li>
+
+<li><b>Cross-Service Causal Consistency.</b> Independent backends can violate causal ordering even when each is internally consistent. Antipode propagated lineage-style context with requests to enforce a causal consistency model across services (<a href="papers/loff2023antipode.pdf">SOSP 2023</a>).</li>
+
+<li><b>Critical-Path Analysis.</b> Identifying the critical path of a distributed request requires propagating slack and timing measurements online. CPath does this; I co-advised the project, which formed the basis of George Sun's MSc thesis (<a href="resources/sun2016general.pdf">PDF</a>).</li>
+</ul>
+
+<p>Across these projects, Baggage serves as shared propagation infrastructure. It does not eliminate deployment effort, but it concentrates that effort into a reusable mechanism rather than repeating it for each tool.</p>
+</div>
+</div>
+
+<h2>Tracing Instrumentation</h2>
+<hr/>
+
+<div class="row">
+<div class="col">
+<p>Instrumentation is the unglamorous bottleneck of tracing. I have instrumented many systems for context propagation - Hadoop, HDFS, Spark, HBase, microbenchmarks, and <a href="https://gitlab.mpi-sws.org/cld/systems">more</a> - and that hands-on work shaped much of my understanding of what is realistic to expect from engineers.</p>
+
+<ul>
+<li>During Retro and Pivot Tracing, I developed aspect-oriented techniques for automatic instrumentation of Java codebases. The approach was not exhaustive but covered common patterns effectively and provided a starting point for manual refinement (<a href="https://github.com/brownsys/tracing-framework">code</a>).</li>
+
+<li>Ironically, the very first iteration of Baggage was to enable Retro, so I could iterate on context-propagation ideas without having to re-instrument or re-build from scratch each time.</li>
+
+<li>We also studied inter-thread communication patterns to identify candidate instrumentation points; that work is captured in Nicolas Schäfer's MSc thesis (<a href="resources/schaefer2021thesis.pdf">PDF</a>).</li>
+
+<li>Getting instrumentation into production systems is as much an organizational challenge as a technical one. I discuss these issues in Chapter 7 of my PhD thesis (<a href="papers/mace_phd_thesis.pdf">PDF</a>). With the recent progress in LLMs and coding agents, automated instrumentation and trace-correctness validation may soon become practical. It is only a matter of time...</li>
+</ul>
+</div>
+</div>
+
+<h2>Trace Sampling</h2>
+<hr/>
+
+<div class="row">
+<div class="col">
+<p>Tracing faces a pretty clear trade-off between data volume and computational costs (compute, storage, network, and operational complexity). There is no one-size-fits-all solution to sampling, as different data suits different use cases. I've looked at sampling and retention through a few lenses:</p>
+
+<ul>
+<li><b>Tail-based outlier sampling.</b> My early work explored unsupervised techniques to bias sampling toward unusual traces; the goal was to detect outliers without hand-engineering features, despite highly heterogeneous and imbalanced traces. The techniques explored include graph kernels (<a href="papers/mace2013revisiting.pdf">2014 MSc project</a>), clustering (<a href="papers/lascasas2018weighted.pdf">SoCC 2018</a>), and autoencoders (<a href="papers/lascasas2019sifter.pdf">SoCC 2019</a>).</li>
+
+<li><b>Retroactive sampling.</b> Tail sampling has always struck me as a bitter compromise: by the time you decide a request is interesting, you have already lost the trace data you need. Hindsight revisits the design assumptions behind tail sampling. We found that the overhead of trace collection is not inherent to tracing itself - it comes from transmitting, indexing, and storing traces. Local capture is cheap. Hindsight exploits this by recording all traces into lightweight local ring buffers and persisting them only when a downstream trigger fires (e.g., an error or SLO violation). The key insight is that you can defer the sampling decision until after you know what matters, as long as local storage is cheap and triggers are fast. We built Hindsight from the ground up; its code is open-sourced (<a href="papers/zhang2023hindsight.pdf">NSDI 2023</a>; <a href="https://gitlab.mpi-sws.org/cld/tracing/hindsight">Gitlab</a>).</li>
+
+<li><b>Sampling for derived metrics.</b> Trace-derived aggregate metrics can become biased under non-uniform head-based sampling. We explored this topic without publishing a paper; our notes and proposed directions appear in Reyhaneh Karimipour's MSc thesis (<a href="resources/karimipour2022aggregate.pdf">PDF</a>).</li>
+</ul>
+</div>
+</div>
+
+<h2>Telemetry for Models and Agents</h2>
+<hr/>
+
+<div class="row">
+<div class="col">
+<p>Models and agents are increasingly consumers of telemetry, not just humans. This raises concrete systems questions: how should we design and integrate those agents? What representations and interfaces enable automated tools to use telemetry effectively? Several recent projects explore this direction:</p>
+
+<ul>
+<li><b>Telemeta.</b> Large-scale telemetry lacks semantic context: metric names are opaque; table relationships are implicit; tables are overloaded; and data is unnormalized. Making effective use of telemetry requires extensive discovery: understanding where data lives, what form it takes, and what rules apply to extract it. Telemeta extracts and indexes semantic models from metric data - what metrics measure, what columns represent, how tables relate, and hidden assumptions about data formats - to give agents a structured foundation for interpreting telemetry. This is an ongoing project I lead at Microsoft.</li>
+
+<li><b>Causal Discovery.</b> Causal reasoning is a powerful technique for root-cause analysis when metrics have known causal relationships. The challenge is constructing the causal graph: data-driven discovery struggles with cloud telemetry because incidents are rare and heterogeneous. In Atlas, we sidestepped this by using LLMs to extract causal graphs from system documentation rather than from observational data, thus treating graph construction as knowledge extraction. Atlas decomposes a system into LLM agents that interpret component descriptions and identify pairwise causal relationships (<a href="https://arxiv.org/pdf/2407.08694.pdf">arXiv 2024</a>).</li>
+
+<li><b>AIOps Benchmarking.</b> Evaluating AI agents on cloud-operations tasks requires realistic, controlled environments. AIOpsLab is a benchmark framework that deploys live microservice applications, injects realistic faults, and provides agents with a controlled interface to observe telemetry and take actions - supporting tasks like detection, localization, root-cause analysis, and mitigation (<a href="papers/chen2025aiopslab.pdf">MLSys 2025</a>).</li>
+
+<li><b>Retry Bugs.</b> Retry logic is notoriously hard to test and frequently breaks in production. We combined LLMs with static analysis and fault injection to automatically detect retry bugs, finding over 100 previously unknown issues across major distributed systems (<a href="papers/stoica2024retry.pdf">SOSP 2024</a>).</li>
+
+<li><b>Time-Series Anomaly Detection.</b> Black-box anomaly-detection algorithms are hard to inspect and validate. We used LLMs to generate anomaly-detection programs for time-series metrics; programs are human-readable and can be reviewed before deployment (<a href="https://arxiv.org/pdf/2501.14170.pdf">arXiv 2025</a>).</li>
+</ul>
+</div>
+</div>
+
+<h2>Systems Building</h2>
+<hr/>
+
+<div class="row">
+<div class="col">
+<p>Many of my projects culminate in working systems - for me, a research idea is only worthwhile if it survives practical constraints. Three themes recur across these systems:</p>
+
+<ul>
+<li><b>Resource management.</b> Sharing resources fairly without sacrificing utilization is hard, especially when request costs vary widely and are unknown at schedule time. Retro and 2DFQ both tackled multi-tenant isolation: Retro at the level of distributed components, 2DFQ at the level of thread pools within a process (<a href="papers/mace2015retro.pdf">NSDI 2015</a>; <a href="papers/mace20162dfq.pdf">SIGCOMM 2016</a>).</li>
+
+<li><b>Performance Predictability.</b> Clockwork is a multi-tenant DNN serving system; in this project we asked whether tail latency could be eliminated rather than merely tolerated. The key insight was that DNN inference is deterministic - if you consolidate all scheduling choices centrally and treat any timing deviation as an error, you can achieve six-nines SLO compliance. We built Clockwork from the ground up and open-sourced it; at OSDI 2020 the work received the Distinguished Artifact award (<a href="papers/gujarati2020serving.pdf">OSDI 2020</a>; <a href="https://gitlab.mpi-sws.org/cld/ml/clockwork">GitLab</a>).</li>
+
+<li><b>Microservices for Research.</b> Experimenting with end-to-end ideas in microservices requires changing scaffolding across many services - a tedious, time-consuming task. Blueprint separates workflow logic from infrastructure choices, letting researchers swap RPC frameworks, enable tracing, or add replication with a few lines of config rather than hundreds of lines of code (<a href="papers/anand2023blueprint.pdf">SOSP 2023</a>; <a href="https://github.com/Blueprint-uServices/blueprint">GitHub</a>).</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
 <div class="tab-pane" id="publications" role="tabpanel" aria-labelledby="publications-tab">
 
 <div class="container">
@@ -192,7 +335,7 @@
 <div class="col">
 <div class="title">AIOpsLab: A Holistic Framework for Evaluating AI Agents for Enabling Autonomous Cloud</div>
 <div class="authors">Yinfang Chen, Manish Shetty, Gagan Somashekar, Minghua Ma, Yogesh Simmhan, Jonathan Mace, Chetan Bansal, Rujia Wang, Saravan Rajmohan</div>
-<div><span class="venue">MLSys</span>, <span class="year">2025</span>.</div>
+<div><span class="venue">MLSys</span>, <span class="year">2025</span>. <span class="links">[<a href="papers/chen2025aiopslab.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -200,7 +343,7 @@
 <div class="col">
 <div class="title">Fair, Practical, and Efficient Carbon Accounting for LLM Serving</div>
 <div class="authors">Yueying Lisa Li, Leo Han, G Edward Suh, Christina Delimitrou, Fiodar Kazhamiaka, Esha Choukse, Rodrigo Fonseca, Liangcheng Yu, Jonathan Mace, Udit Gupta</div>
-<div><span class="venue">ACM SIGMETRICS Performance Evaluation Review</span>, <span class="year">2025</span>.</div>
+<div><span class="venue">ACM SIGMETRICS Performance Evaluation Review</span>, <span class="year">2025</span>. <span class="links">[<a href="papers/li2025fair.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -208,7 +351,7 @@
 <div class="col">
 <div class="title">Generating Representative Macrobenchmark Microservice Systems from Distributed Traces with Palette</div>
 <div class="authors">Vaastav Anand, Matheus Stolet, Jonathan Mace, Antoine Kaufmann</div>
-<div><span class="venue">APSys</span>, <span class="year">2025</span>.</div>
+<div><span class="venue">APSys</span>, <span class="year">2025</span>. <span class="links">[<a href="papers/anand2025generating.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -216,7 +359,7 @@
 <div class="col">
 <div class="title">Intent-based System Design and Operation</div>
 <div class="authors">Vaastav Anand, Yichen Li, Alok Gautam Kumbhare, Celine Irvene, Chetan Bansal, Gagan Somashekar, Jonathan Mace, Pedro Las-Casas, Ricardo Bianchini, Rodrigo Fonseca</div>
-<div><span class="venue">PACMI (co-located with SOSP)</span>, <span class="year">2025</span>.</div>
+<div><span class="venue">PACMI</span>, <span class="year">2025</span>. <span class="links">[<a href="papers/anand2025intent.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -224,7 +367,7 @@
 <div class="col">
 <div class="title">Automated Service Design with Cerulean</div>
 <div class="authors">Vaastav Anand, Akshay Kumbhare, Christopher Irvene, Chetan Bansal, Gagan Somashekar, Jonathan Mace, Pedro Las-Casas, Rodrigo Fonseca</div>
-<div><span class="venue">AIOps Workshop</span>, <span class="year">2025</span>.</div>
+<div><span class="venue">AIOps</span>, <span class="year">2025</span>. <span class="links">[<a href="papers/anand2025automated.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -232,7 +375,7 @@
 <div class="col">
 <div class="title">Argos: Agentic Time-Series Anomaly Detection with Autonomous Rule Generation via Large Language Models</div>
 <div class="authors">Yile Gu, Yuxuan Xiong, Jonathan Mace, Yong Jiang, Yulong Hu, Baris Kasikci, Peng Cheng</div>
-<div><span class="venue">arXiv preprint</span>, <span class="year">2025</span>. <span class="links">[<a href="https://arxiv.org/pdf/2501.14170.pdf">PDF</a>]</span></div>
+<div><span class="venue">arXiv preprint</span>, <span class="year">2025</span>. <span class="links">[<a href="papers/gu2025argos.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -244,7 +387,7 @@
 <div class="col">
 <div class="title">Building AI Agents for Autonomous Clouds: Challenges and Design Principles</div>
 <div class="authors">Manish Shetty, Yinfang Chen, Gagan Somashekar, Minghua Ma, Yogesh Simmhan, Xuchao Zhang, Jonathan Mace, Pedro Las-Casas, Shachee Gupta, Suman Nath, Chetan Bansal, Saravan Rajmohan</div>
-<div><span class="venue">SoCC</span>, <span class="year">2024</span>.</div>
+<div><span class="venue">SoCC</span>, <span class="year">2024</span>. <span class="links">[<a href="papers/shetty2024building.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -252,7 +395,7 @@
 <div class="col">
 <div class="title">If At First You Don't Succeed, Try, Try, Again...? Insights and LLM-informed Tooling for Detecting Retry Bugs in Software Systems</div>
 <div class="authors">Bogdan Stoica, Utsav Sethi, Yiming Su, Cyrus Zhou, Shan Lu, Jonathan Mace, Madan Musuvathi, Suman Nath</div>
-<div><span class="venue">SOSP</span>, <span class="year">2024</span>.</div>
+<div><span class="venue">SOSP</span>, <span class="year">2024</span>. <span class="links">[<a href="papers/stoica2024retry.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -260,7 +403,7 @@
 <div class="col">
 <div class="title">Cloud Atlas: Efficient Fault Localization for Cloud Systems using Language Models and Causal Insight</div>
 <div class="authors">Zhiqiang Xie, Yujia Zheng, Lizi Ottens, Kun Zhang, Christos Kozyrakis, Jonathan Mace</div>
-<div><span class="venue">arXiv preprint</span>, <span class="year">2024</span>. <span class="links">[<a href="https://arxiv.org/pdf/2407.08694.pdf">PDF</a>]</span></div>
+<div><span class="venue">arXiv preprint</span>, <span class="year">2024</span>. <span class="links">[<a href="papers/xie2024cloud.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -272,7 +415,7 @@
 <div class="col">
 <div class="title">Blueprint: A Toolchain for Highly-Reconfigurable Microservice Applications</div>
 <div class="authors">Vaastav Anand, Deepak Garg, Antoine Kaufmann, Jonathan Mace</div>
-<div><span class="venue">SOSP</span>, <span class="year">2023</span>.</div>
+<div><span class="venue">SOSP</span>, <span class="year">2023</span>. <span class="links">[<a href="papers/anand2023blueprint.pdf">PDF</a>] [<a href="https://github.com/Blueprint-uServices/blueprint">GitHub</a>]</span></div>
 </div>
 </div>
 
@@ -280,7 +423,7 @@
 <div class="col">
 <div class="title">Antipode: Enforcing Cross-Service Causal Consistency in Distributed Applications</div>
 <div class="authors">João Loff, Daniel Porto, João Garcia, Jonathan Mace, Rodrigo Rodrigues</div>
-<div><span class="venue">SOSP</span>, <span class="year">2023</span>.</div>
+<div><span class="venue">SOSP</span>, <span class="year">2023</span>. <span class="links">[<a href="papers/loff2023antipode.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -288,7 +431,7 @@
 <div class="col">
 <div class="title">Detection Is Better Than Cure: A Cloud Incidents Perspective</div>
 <div class="authors">Varsha Ganatra, Aditya Parayil, Saurabh Ghosh, Yingnong Kang, Minghua Ma, Chetan Bansal, Suman Nath, Jonathan Mace</div>
-<div><span class="venue">ESEC/FSE</span>, <span class="year">2023</span>.</div>
+<div><span class="venue">ESEC/FSE</span>, <span class="year">2023</span>. <span class="links">[<a href="papers/ganatra2023detection.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -296,7 +439,7 @@
 <div class="col">
 <div class="title">The Benefit of Hindsight: Tracing Edge-Cases in Distributed Systems</div>
 <div class="authors">Lei Zhang, Zhiqiang Xie, Vaastav Anand, Ymir Vigfusson, Jonathan Mace</div>
-<div><span class="venue">NSDI</span>, <span class="year">2023</span>. <span class="links">[<a href="papers/zhang2023hindsight.pdf">PDF</a>]</span></div>
+<div><span class="venue">NSDI</span>, <span class="year">2023</span>. <span class="links">[<a href="papers/zhang2023hindsight.pdf">PDF</a>] [<a href="https://gitlab.mpi-sws.org/cld/tracing/hindsight">GitLab</a>]</span></div>
 </div>
 </div>
 
@@ -320,7 +463,7 @@
 <div class="col">
 <div class="title">The Odd One Out: Energy is Not Like Other Metrics</div>
 <div class="authors">Vaastav Anand, Zhiqiang Xie, Matheus Stolet, Roberta De Viti, Thomas Davidson, Reyhaneh Karimipour, Safya Alzayat, Jonathan Mace</div>
-<div><span class="venue">ACM SIGENERGY Energy Informatics Review</span>, <span class="year">October 2023</span>.</div>
+<div><span class="venue">ACM SIGENERGY Energy Informatics Review</span>, <span class="year">October 2023</span>. <span class="links">[<a href="papers/anand2023odd.pdf">PDF</a>]</span></div>
 </div>
 </div>
 
@@ -360,7 +503,7 @@
 <div class="col">
 <div class="title">Serving DNNs like Clockwork: Performance Predictability from the Bottom Up</div>
 <div class="authors">Arpan Gujarati, Reza Karimi, Safya Alzayat, Wei Hao, Antoine Kaufmann, Ymir Vigfusson, Jonathan Mace</div>
-<div><span class="venue">OSDI</span>, <span class="year">2020</span>. <span class="links">[<a href="papers/gujarati2020serving.pdf">PDF</a>]</span></div>
+<div><span class="venue">OSDI</span>, <span class="year">2020</span>. <span class="links">[<a href="papers/gujarati2020serving.pdf">PDF</a>] [<a href="https://gitlab.mpi-sws.org/cld/ml/clockwork">GitLab</a>]</span></div>
 <div class="papernote"><i class="fas fa-trophy"></i> Distinguished Artifact Award</div>
 </div>
 </div>
@@ -419,7 +562,7 @@
 <div class="col">
 <div class="title">Universal Context Propagation for Distributed System Instrumentation</div>
 <div class="authors">Jonathan Mace, Rodrigo Fonseca</div>
-<div><span class="venue">EuroSys</span>, <span class="year">2018</span>. <span class="links">[<a href="papers/mace2018universal.pdf">PDF</a>]</span></div>
+<div><span class="venue">EuroSys</span>, <span class="year">2018</span>. <span class="links">[<a href="papers/mace2018universal.pdf">PDF</a>] [<a href="https://github.com/tracingplane">GitHub</a>]</span></div>
 </div>
 </div>
 
@@ -463,7 +606,7 @@
 <div class="col">
 <div class="title">Pivot Tracing: Dynamic Causal Monitoring for Distributed Systems</div>
 <div class="authors">Jonathan Mace, Ryan Roelke, Rodrigo Fonseca</div>
-<div><span class="venue">SOSP</span>, <span class="year">2015</span>. <span class="links">[<a href="papers/mace2015pivot.pdf">PDF</a>]</span></div>
+<div><span class="venue">SOSP</span>, <span class="year">2015</span>. <span class="links">[<a href="papers/mace2015pivot.pdf">PDF</a>] [<a href="https://github.com/brownsys/tracing-framework/tree/master/pivottracing">GitHub</a>]</span></div>
 <div class="papernote"><i class="fas fa-trophy"></i> Best Paper Award</div>
 </div>
 </div>
@@ -480,7 +623,7 @@
 <div class="col">
 <div class="title">Retro: Targeted Resource Management in Multi-Tenant Distributed Systems</div>
 <div class="authors">Jonathan Mace, Peter Bodik, Rodrigo Fonseca, Madanlal Musuvathi</div>
-<div><span class="venue">NSDI</span>, <span class="year">2015</span>. <span class="links">[<a href="papers/mace2015retro.pdf">PDF</a>]</span></div>
+<div><span class="venue">NSDI</span>, <span class="year">2015</span>. <span class="links">[<a href="papers/mace2015retro.pdf">PDF</a>] [<a href="https://github.com/brownsys/tracing-framework/tree/master/retro">GitHub</a>]</span></div>
 </div>
 </div>
 
@@ -575,6 +718,42 @@
 </div>
 </div>
 
+<div class="row">
+<div class="col newyear divider"></div>
+</div>
+
+
+
+<div class="row" style="padding-top: 50px">
+<div class="col newyear divider"></div>
+</div>
+
+<h2>Other Documents</h2>
+
+<div class="row">
+<div class="col">
+<ul>
+<li><b>2021 Research Statement</b>, Jonathan Mace <span class="links">[<a href="resources/mace2021research.pdf">PDF</a>]</span></li>
+<li><b>2017 Research Statement</b>, Jonathan Mace <span class="links">[<a href="resources/mace2017research.pdf">PDF</a>]</span></li>
+<li><b>End-to-End Tracing: Adoption and Use Cases</b>, Jonathan Mace, 2017. <span class="links">[<a href="resources/mace2017research.pdf">PDF</a>]</span></li>
+</ul>
+</div>
+</div>
+
+<h2>Other Resources</h2>
+
+<div class="row">
+<div class="col">
+<ul>
+<li><a href="https://gitlab.mpi-sws.org/cld/systems">Instrumented forks of various systems</a> (GitLab)</li>
+<li><a href="https://gitlab.mpi-sws.org/cld/trace-datasets">Datasets collected</a> (GitLab)</li>
+<li><a href="https://gitlab.mpi-sws.org/cld/tracing/hindsight-grpc">Microbricks benchmark system</a> (GitLab)</li>
+<li><a href="https://gitlab.mpi-sws.org/cld/workloads/tpcds">TPCDS Spark implementation</a> (GitLab)</li>
+<li>Visualization demos: <a href="https://cs.brown.edu/people/jcmace/#Demos">Demos</a> | <a href="https://github.com/brownsys/tracing-framework/tree/master/xtrace/visualization">Source code</a></li>
+</ul>
+</div>
+</div>
+
 </div>
 
 </div>
@@ -593,12 +772,8 @@
 
 <div class="row">
 <div class="col-xl order-1">
-<p><div class="contact-icon"><i class="far fa-envelope"></i></div>jonathan.c.mace at gmail or jonathanmace at microsoft</p>
-<p><div class="contact-icon"><i class="fab fa-github"></i></div><a href="https://github.com/JonathanMace">github.com/JonathanMace</a></p>
-<p><div class="contact-icon"><i class="fab fa-github"></i></div><a href="https://github.com/brownsys">github.com/brownsys</a> <span style="color: #666; font-size: 0.9em;">(projects from my time at Brown)</span></p>
-<p><div class="contact-icon"><i class="fab fa-gitlab"></i></div><a href="https://gitlab.mpi-sws.org/cld">gitlab.mpi-sws.org/cld</a> <span style="color: #666; font-size: 0.9em;">(projects from my time at MPI-SWS)</span></p>
-<p><div class="contact-icon"><i class="ai ai-google-scholar"></i></div><a href="https://scholar.google.com/citations?user=-j5wb9IAAAAJ">Google Scholar</a></p>
-<p><div class="contact-icon"><i class="ai ai-dblp"></i></div><a href="https://dblp.uni-trier.de/pers/hd/m/Mace:Jonathan">DBLP</a></p>
+<p><div class="contact-icon"><i class="far fa-envelope"></i></div>jonathanmace at microsoft (preferred for work-related)</p>
+<p><div class="contact-icon"><i class="far fa-envelope"></i></div>jonathan.c.mace at gmail</p>
 </div>
 </div>
 </div>
